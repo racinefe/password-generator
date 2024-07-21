@@ -7,8 +7,11 @@ import { PasswordGeneratorComponent } from './components/password-generator/pass
   standalone: true,
   imports: [RouterOutlet, PasswordGeneratorComponent],
   template: `
+            <div class="container">
               <app-password-generator/>
               <router-outlet /> 
+            </div>
+              
             `,
   
 })

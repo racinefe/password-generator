@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-//material
-import {MatCardModule} from '@angular/material/card';
+import {MatSliderModule} from '@angular/material/slider';
+
 
 @Component({
   selector: 'app-password-config',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatCardModule],
+  imports: [CommonModule, FormsModule, MatSliderModule],
   templateUrl: './password-config.component.html',
   styleUrls: ['./password-config.component.scss']
 })
