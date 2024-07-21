@@ -1,22 +1,25 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+//material
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-password-config',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MatCardModule],
   templateUrl: './password-config.component.html',
   styleUrls: ['./password-config.component.scss']
 })
 export class PasswordConfigComponent {
   @Output() passwordGenerated = new EventEmitter<string>();
 
-  length: number = 12;
-  includeUppercase: boolean = true;
-  includeLowercase: boolean = true;
+  length: number = 6;
+  includeUppercase: boolean = false;
+  includeLowercase: boolean = false;
   includeNumbers: boolean = true;
-  includeSymbols: boolean = true;
+  includeSymbols: boolean = false;
+
 
   generatePassword() {
     const upperCaseCharset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -34,6 +37,7 @@ export class PasswordConfigComponent {
       alert('Selecione pelo menos uma opção de caracteres.');
       return;
     }
+   
 
     let generatedPassword = '';
     for (let i = 0, n = charset.length; i < this.length; ++i) {
