@@ -5,11 +5,15 @@ import { PasswordDisplayComponent } from '../password-display/password-display.c
 import { CopyButtonComponent } from '../copy-button/copy-button.component';
 //material
 import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+
+
+import { CopiedDialogComponent } from '../copied-dialog/copied-dialog.component';
 
 @Component({
   selector: 'app-password-generator',
   standalone: true,
-  imports: [CommonModule, PasswordConfigComponent, PasswordDisplayComponent, CopyButtonComponent, MatCardModule],
+  imports: [CommonModule, PasswordConfigComponent, PasswordDisplayComponent, CopyButtonComponent, MatCardModule,CopiedDialogComponent,MatGridListModule],
   templateUrl: './password-generator.component.html',
   styleUrls: ['./password-generator.component.scss']
 })
@@ -19,4 +23,6 @@ export class PasswordGeneratorComponent {
   onPasswordGenerated(password: string) {
     this.generatedPassword = password;
   }
+  
+
 }

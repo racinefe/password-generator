@@ -22,17 +22,20 @@ export class PasswordConfigComponent {
 
 
   generatePassword() {
+    //Definição de variáveis do charset:
     const upperCaseCharset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const lowerCaseCharset = 'abcdefghijklmnopqrstuvwxyz';
     const numberCharset = '0123456789';
     const symbolCharset = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
-    
+
+    //Condicionais para incluir conjuntos de caracteres:
     let charset = '';
     if (this.includeUppercase) charset += upperCaseCharset;
     if (this.includeLowercase) charset += lowerCaseCharset;
     if (this.includeNumbers) charset += numberCharset;
     if (this.includeSymbols) charset += symbolCharset;
     
+    //Verificação se charset está vazio:
     if (charset === '') {
       alert('Selecione pelo menos uma opção de caracteres.');
       return;
