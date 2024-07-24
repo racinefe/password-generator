@@ -24,10 +24,12 @@ export class PasswordConfigComponent {
   //variaveis para desativar e ocultar elementos
   loading: boolean = false;
   btnDisabled: boolean = false;
+  alert: boolean = false;
 
 
   generatePassword() {
     //Definição de variáveis do charset:
+    console.log('1');
     this.loading = true;
     this.btnDisabled = true;
     const upperCaseCharset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -45,20 +47,27 @@ export class PasswordConfigComponent {
     
     //Verificação se charset está vazio:
     if (charset === '') {
-      alert('Selecione pelo menos uma opção de caracteres.');
-      return;
+      console.log('2');
+      this.alert = true
+      setTimeout(() => {
+       this.alert = false;
+       this.passwordGenerated.emit(generatedPassword);
+      }, 5000);
     }
-   
-
-    let generatedPassword = '';
-    for (let i = 0, n = charset.length; i < this.length; ++i) {
-      generatedPassword += charset.charAt(Math.floor(Math.random() * n));
-    }
+      console.log('3');
+      let generatedPassword = '';
+      for (let i = 0, n = charset.length; i < this.length; ++i) {
+        generatedPassword += charset.charAt(Math.floor(Math.random() * n));
+      }
     setTimeout(() => {
       this.loading = false;
       this.btnDisabled = false;
       this.passwordGenerated.emit(generatedPassword);
     }, 1000);
+    
+   
+
+    
       
     
     
