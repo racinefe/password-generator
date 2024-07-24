@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
+import { CopiedDialogComponent } from '../copied-dialog/copied-dialog.component';
 
 @Component({
   selector: 'app-password-display',
@@ -12,4 +13,15 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class PasswordDisplayComponent {
   @Input() password: string | null = null;
+
+  copyToClipboard() {
+    if (this.password) {
+      navigator.clipboard.writeText(this.password).then(() => {
+        this.dialog.open(CopiedDialogComponent);
+      }).catch(err => {
+        console.error('Erro ao copiar a senha: ', err);
+      });
+    }
+  }
+  constructor(private dialog: MatDialog) { }
 }
