@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-import {MatCardModule} from '@angular/material/card';
+
 import { CopiedDialogComponent } from '../copied-dialog/copied-dialog.component';
 
 @Component({
   selector: 'app-password-display',
   standalone: true,
-  imports: [CommonModule,MatDialogModule,MatCardModule],
+  imports: [CommonModule,MatDialogModule,],
   templateUrl: './password-display.component.html',
   styleUrls: ['./password-display.component.scss']
 })

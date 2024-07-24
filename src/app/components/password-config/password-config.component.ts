@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {MatSliderModule} from '@angular/material/slider';
 
 
+
 @Component({
   selector: 'app-password-config',
   standalone: true,
@@ -19,14 +20,21 @@ export class PasswordConfigComponent {
   includeLowercase: boolean = false;
   includeNumbers: boolean = true;
   includeSymbols: boolean = false;
+  
+  //variaveis para desativar e ocultar elementos
+  loading: boolean = false;
+  btnDisabled: boolean = false;
 
 
   generatePassword() {
     //Definição de variáveis do charset:
+    this.loading = true;
+    this.btnDisabled = true;
     const upperCaseCharset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const lowerCaseCharset = 'abcdefghijklmnopqrstuvwxyz';
     const numberCharset = '0123456789';
     const symbolCharset = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
+    
 
     //Condicionais para incluir conjuntos de caracteres:
     let charset = '';
@@ -46,6 +54,13 @@ export class PasswordConfigComponent {
     for (let i = 0, n = charset.length; i < this.length; ++i) {
       generatedPassword += charset.charAt(Math.floor(Math.random() * n));
     }
-    this.passwordGenerated.emit(generatedPassword);
+    setTimeout(() => {
+      this.loading = false;
+      this.btnDisabled = false;
+      this.passwordGenerated.emit(generatedPassword);
+    }, 1000);
+      
+    
+    
   }
 }
