@@ -18,9 +18,7 @@ export class PasswordDisplayComponent {
     if (this.password) {
       navigator.clipboard.writeText(this.password).then(() => {
         this.dialog.open(CopiedDialogComponent);
-      }).catch(err => {
-        console.error('Erro ao copiar a senha: ', err);
-      });
+      })
     }
   }
   constructor(private dialog: MatDialog) { }
