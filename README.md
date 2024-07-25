@@ -1,6 +1,6 @@
 # Gerador de Senhas
 
-![Imagem do Projeto](assets/images/projeto-preview.png)
+<img src="https://i.ibb.co/c8C46py/Captura-de-tela-2024-07-25-121511.png" width="300"><img src="https://i.ibb.co/pX8hKwQ/Captura-de-tela-2024-07-25-121523.png" width="300"><img src="https://i.ibb.co/ngmpXJR/Captura-de-tela-2024-07-25-121537.png" width="300">
 
 ## Menu
 
