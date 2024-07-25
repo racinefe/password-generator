@@ -1,27 +1,28 @@
-# PasswordGenerator
+# Gerador de Senhas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+![Imagem do Projeto](assets/images/projeto-preview.png)
 
-## Development server
+## Menu
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Tecnologias Usadas](#tecnologias-usadas)
+- [Descrição do Projeto](#descrição-do-projeto)
+- [Autor](#autor)
 
-## Code scaffolding
+## Tecnologias Usadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 17
+- Angular Material
+- TypeScript
+- HTML
+- SCSS
+- Bootstrap
 
-## Build
+## Descrição do Projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Este projeto é uma aplicação web desenvolvida com Angular que inclui um gerador de senhas e uma barra de progresso personalizada.
+O gerador de senhas permite ao usuário gerar senhas fortes e copiá-las facilmente.
+A barra de progresso é estilizada utilizando SCSS e Bootstrap para proporcionar uma melhor experiência visual.
 
-## Running unit tests
+## Autor
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[Racine Fellipe](https://curriculo-portfolio.netlify.app/)
